@@ -11,6 +11,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { OrderComponent } from './components/order/order.component';
 import { FormComponent } from './components/authentificate/authentificate.component';
+import { AddTrainingComponent } from './components/add-training/add-training.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormComponent } from './components/authentificate/authentificate.compon
     CustomerComponent,
     OrderComponent,
     FormComponent,
+    AddTrainingComponent,
 
   ],
   imports: [

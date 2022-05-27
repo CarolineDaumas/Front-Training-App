@@ -14,5 +14,7 @@ export class TrainingsService {
     return this.http.get<Training[]>(environment.host+"/trainings");
   }
 
-  
+  public getNewTraining(){
+    return this.http.get<Training>(environment.host+"/trainings");
+  }
 }
