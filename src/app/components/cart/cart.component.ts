@@ -21,9 +21,15 @@ export class CartComponent implements OnInit {
   onRemoveFromCart(training : Training){
     this.cartService.removeTraining(training);
     this.cart = this.cartService.getCart();
+    this.amount = this.cartService.getAmount();
   }
 
   onNewOrder(){
-    this.router.navigateByUrl('customer');
+    if(localStorage.getItem('user')!=null){
+    this.router.navigateByUrl('customer'); }
+    else 
+    { alert("Connectez-vous!");
+      this.router.navigateByUrl('form');
   }
+}
 }

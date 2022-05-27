@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from './model/user.model';
+import { AuthentificationService } from './services/authentification.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'trainings-front-app';
+
+  constructor(private authentificationService: AuthentificationService){}
+
+  onLogOut (){
+    this.authentificationService.logOut();
+  }
 }
