@@ -9,6 +9,7 @@ import { FormComponent } from './components/authentificate/authentificate.compon
 
 const routes: Routes = [
     { path : 'trainings', component : TrainingsComponent },
+    { path : 'trainings/:id', component:TrainingsComponent},
     { path : 'cart' , component : CartComponent },
     { path : 'order' , component : OrderComponent},
     { path : 'customer' , component : CustomerComponent},

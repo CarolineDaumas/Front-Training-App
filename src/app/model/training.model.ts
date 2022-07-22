@@ -4,6 +4,8 @@ export class Training {
     description : string;
     price : number;
     quantity : number;
+  static id: number;
+  static quantity: number;
 
     constructor(id:number,name:string,description:string,price:number, quantity:number) {
         this.id = id;

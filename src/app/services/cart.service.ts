@@ -18,8 +18,17 @@ export class CartService {
   }
 
   addTraining(training: Training) { 
-    this.cart.set(training.id,training);
-    this.saveCart(); //à chaque fois que j'ajoute un élément au panier, je met à jour le local storage
+   let tr=this.cart.get(training.id)
+   if (tr) {
+   tr.quantity+=training.quantity
+    } else {
+      this.cart.set(training.id, training);
+   }
+   this.saveCart(); //à chaque fois que j'ajoute un élément au panier, je met à jour le local storage
+
+
+    //this.cart.set(training.id,training);
+    //this.saveCart(); //à chaque fois que j'ajoute un élément au panier, je met à jour le local storage
   }
 
   saveCustomer(customer : Customer) {

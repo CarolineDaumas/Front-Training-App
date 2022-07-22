@@ -27,5 +27,7 @@ export class AddTrainingComponent implements OnInit {
   }
 
   onAddTraining(form:FormGroup){
+    console.log(form.value);
+   this.trainingsService.getNewTraining();
 }
 }
