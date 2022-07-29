@@ -4,6 +4,8 @@ import { Training } from '../model/training.model';
 import { environment } from 'src/environments/environment';
 import { Category } from '../model/category.model';
 import { Observable } from 'rxjs';
+import { Order } from '../model/order.model';
+import { OrderItem } from '../model/orderItem.model';
 
 @Injectable({
   providedIn: 'root'
@@ -31,4 +33,14 @@ export class TrainingsService {
   public getNewTraining(){
     return this.http.post<Training>(environment.host+"/trainings",new Training(0,"","",100,1));
   }
+
+  public postOrder(order:any){
+    console.log(order);
+    return this.http.post<any>(environment.host+"/orders", order);
+
+}
+
+public postOrderItem(orderItem:any){
+    return this.http.post<OrderItem>(environment.host+"/orderItems", orderItem);
+}
 }

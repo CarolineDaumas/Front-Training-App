@@ -6,7 +6,7 @@ import { User } from '../model/user.model';
   providedIn: 'root'
 })
 export class AuthentificationService {
-
+  connected: boolean = false;
 
   private users = [
     { email: "g@aol.com", pwd: "0000", roles: ['ADMIN'] },
@@ -17,15 +17,16 @@ export class AuthentificationService {
   constructor(private http: HttpClient) { }
 
   public connect(email: string, pwd: string) {
-    let connect: boolean = false;
+   
     this.users.forEach(element => {
       if (element.email == email && element.pwd == pwd) {
         alert("Vous êtes connectés en tant que " + element.email);
-        connect = true;
+        this.connected = true;
         this.saveUser(new User(element.email, element.pwd, element.roles));
       }
     });
-    if (connect == false) alert("Connexion impossible, identifiants incorrects");
+    if (this.connected == false) alert("Connexion impossible, identifiants incorrects");
+    
   }
 
   getUser(): User {
